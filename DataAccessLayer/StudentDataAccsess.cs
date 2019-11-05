@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace DataAccessLayer
 {
     public class StudentDataAccsess
     {
-        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
 
         //check for a valid faculty
         public bool IsValidCSStudent(string studentID, string password)
@@ -69,7 +67,7 @@ namespace DataAccessLayer
         //using sql
         public List<string> GetStudentList(string department)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             List<string> studentList = new List<string>();
 
             if (department == "CS")
@@ -119,7 +117,7 @@ namespace DataAccessLayer
         //Faculty Information
         public List<string> GetStudentInfo(string studentID, string department)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             List<string> studentInfo = new List<string>();
 
             if (department == "CS")
@@ -436,7 +434,7 @@ namespace DataAccessLayer
             if (department == "CS")
             {
                 var query = from p in context.CSStudentsTables
-                            where p.StudentID  == studentID
+                            where p.StudentID == studentID
                             select p;
 
                 //img

@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace DataAccessLayer
 {
     public class AdminDataAccess
     {
-        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
 
         //using linq
         public List<object> GetAdminList()
@@ -27,7 +25,7 @@ namespace DataAccessLayer
         //using sql
         public List<string> GetAdminLst()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             conn.Open();
             SqlDataAdapter sda = new SqlDataAdapter("Select * From AdminTable", conn);
             DataTable dt = new DataTable();
@@ -53,7 +51,7 @@ namespace DataAccessLayer
                     && p.Password == password
                     select p;
 
-            if(q.Any())
+            if (q.Any())
             {
                 return true;
             }
@@ -69,7 +67,7 @@ namespace DataAccessLayer
             var q = from p in context.AdminTables
                     where p.UserName == userName
                     select p;
-            if(q.Any())
+            if (q.Any())
             {
                 return true;
             }
@@ -147,7 +145,7 @@ namespace DataAccessLayer
             {
                 context.SubmitChanges();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }
@@ -156,7 +154,7 @@ namespace DataAccessLayer
         //Admin Information
         public List<string> GetAdminInfo(string userName)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = conn.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -180,7 +178,7 @@ namespace DataAccessLayer
                 adminInfo.Add(row["CityName"].ToString());
             }
             conn.Close();
-            
+
             return adminInfo;
         }
     }

@@ -14,3 +14,11 @@ D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\bin\D
 D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.dll
 D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csprojResolveAssemblyReference.cache
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\bin\Debug\UniData.mdf
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\bin\Debug\UniData_log.ldf
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\obj\Debug\DataAccessLayer.pdb

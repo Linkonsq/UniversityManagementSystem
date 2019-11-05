@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>KGEjPf81zhBzeWP63dUCS6XCz7BKVNxrySPb3/cOOS4=</dsig:DigestValue>
+        <dsig:DigestValue>IuR4w70k5g0rhxRmiJg9KvSplu9G7bvqbtE14FZ8EIg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vl1vI2/5C2Qk49ZOFC7WeTuSgQT4o8NegQY15/t3lZ4=</dsig:DigestValue>
+        <dsig:DigestValue>LbJVBx5LvJiDkFNYmZfx+oJngEVbT6oDHNlkd4zdFFU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PresentationLayer.exe" size="131544">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PresentationLayer.exe" size="131552">
       <assemblyIdentity name="PresentationLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pKFrDNSMdeoWmQ+tcUu95VBXmZ+B9wFUN9CcV3Fzvx8=</dsig:DigestValue>
+        <dsig:DigestValue>MoNtM7hb3iYH2sscmkqty6vp8etYFazKxcwgxHZenPE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

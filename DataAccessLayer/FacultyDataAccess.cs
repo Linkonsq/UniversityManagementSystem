@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace DataAccessLayer
 {
     public class FacultyDataAccess
     {
-        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+        public static InformationDataContext context = new InformationDataContext(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
 
         //check for a valid faculty
         public bool IsValidCSFaculty(string userName, string password)
@@ -69,7 +67,7 @@ namespace DataAccessLayer
         //using sql
         public List<string> GetFacultyList(string department)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             List<string> facultyList = new List<string>();
 
             if (department == "CS")
@@ -123,10 +121,10 @@ namespace DataAccessLayer
         //Faculty Information
         public List<string> GetFacultyInfo(string userName, string department)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\AIUB\Semester\9thSem\C#\Final\UniversityMangementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Programming\C#\UniversityManagementSystem\DataAccessLayer\UniData.mdf;Integrated Security=True");
             List<string> facultyInfo = new List<string>();
 
-            if(department == "CS")
+            if (department == "CS")
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
@@ -155,7 +153,7 @@ namespace DataAccessLayer
                 }
                 conn.Close();
             }
-            else if(department == "EEE")
+            else if (department == "EEE")
             {
                 conn.Open();
                 SqlCommand cmd = conn.CreateCommand();
@@ -319,7 +317,7 @@ namespace DataAccessLayer
         //add new faculty
         public void AddFaculty(string userName, string password, string fullName, string roomNo, string contactNo, string email, string dob, string age, string sex, string bloodGroup, string college, string university, string address, Image pic, string department)
         {
-            if(department == "CS")
+            if (department == "CS")
             {
                 CSFacultyTable csft = new CSFacultyTable();
                 csft.UserName = userName;
@@ -345,7 +343,7 @@ namespace DataAccessLayer
                 context.CSFacultyTables.InsertOnSubmit(csft);
                 context.SubmitChanges();
             }
-            else if(department == "EEE")
+            else if (department == "EEE")
             {
                 EEEFacultyTable eeeft = new EEEFacultyTable();
                 eeeft.UserName = userName;
@@ -401,7 +399,7 @@ namespace DataAccessLayer
 
         public void UpdateFaculty(string selectedItem, string userName, string password, string fullName, string roomNo, string contactNo, string email, string dob, string age, string sex, string bloodGroup, string college, string university, string address, Image pic, string department)
         {
-            if(department == "CS")
+            if (department == "CS")
             {
                 var query = from p in context.CSFacultyTables
                             where p.UserName == selectedItem
@@ -527,7 +525,7 @@ namespace DataAccessLayer
         //delete a faculty
         public void DeleteFaculty(string userName, string departmen)
         {
-            if(departmen == "CS")
+            if (departmen == "CS")
             {
                 var p = from a in context.CSFacultyTables
                         where a.UserName == userName
@@ -547,7 +545,7 @@ namespace DataAccessLayer
                     Console.WriteLine(e);
                 }
             }
-            else if(departmen == "EEE")
+            else if (departmen == "EEE")
             {
                 var p = from a in context.EEEFacultyTables
                         where a.UserName == userName
